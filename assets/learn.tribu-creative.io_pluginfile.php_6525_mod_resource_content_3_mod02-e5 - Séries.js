@@ -219,12 +219,26 @@ console.info("4/ Donnez la liste des séries d'animation.");
 // Recherchez dans la documentation sur les Array une méthode appropriée à la recherche d'une valeur.
 // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array#m%C3%A9thodes_des_instances
 
-console.log(series.styles.find(animation));
+// for (let title in series){
 
+// console.log(series[title].styles);
+// }
+// console.log(styles.includes(Animation));
+
+let animation = [];
+
+for (const title in series) {
+if (series[title].styles.includes("Animation")){
+    animation.push(title);
+            }
+}
+console.log(animation);
 /* --------------------------------------------- */
 
-console.info("5/ Il est 23h. J'ai décidé de faire une nuit blanche et de regarder une série complète avant 8h demain matin.");
+console.info("5/ Il est 23h. J'ai décidé de faire une nuit blanche et de regarder une série complète avant 8h demain matin. quelles sont les séries dont la durée est égale 8h-23h (9h) ");
 console.info("Quelles sont les séries que je peux regarder ?");
+
+
 
 console.log();
 
