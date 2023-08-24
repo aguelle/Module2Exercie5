@@ -235,7 +235,7 @@ if (series[title].styles.includes("Animation")){
 console.log(animation);
 /* --------------------------------------------- */
 
-console.info("5/ Il est 23h. J'ai décidé de faire une nuit blanche et de regarder une série complète avant 8h demain matin. quelles sont les séries dont la durée est égale 8h-23h (9h) ");
+console.info("5/ Il est 23h. J'ai décidé de faire une nuit blanche et de regarder une série complète avant 8h demain matin. quelles sont les séries complètes dont la durée est égale 8h-23h (9h) ");
 console.info("Quelles sont les séries que je peux regarder ?");
 
 
