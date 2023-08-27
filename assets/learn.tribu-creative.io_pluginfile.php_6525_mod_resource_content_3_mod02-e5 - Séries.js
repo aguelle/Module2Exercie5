@@ -268,7 +268,6 @@ console.info(
   "6/ Quelles sont les séries terminées originaires de Grande-Bretagne ou du Japon ?"
 );
 let filmArray = [];
-let strangersFilms;
 
 for (let c in series) {
   if (
@@ -286,8 +285,19 @@ console.log(filmArray);
 console.info(
   "7/ J'ai uniquement un abonnement Netflix. Quelles series de science fiction ou thriller puis-je regarder ?"
 );
+let seriesArray = [];
 
-console.log();
+for (let c in series) {
+  if (
+    series[c].availableOn === "Netflix" &&
+    (series[c].styles.includes("Science fiction") ||
+      series[c].styles.includes("Thriller"))
+  ) {
+    seriesArray.push(c);
+  }
+}
+
+console.log(seriesArray);
 
 /* --------------------------------------------- */
 
