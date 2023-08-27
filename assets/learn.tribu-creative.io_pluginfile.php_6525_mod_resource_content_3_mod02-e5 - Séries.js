@@ -268,27 +268,19 @@ console.info(
   "6/ Quelles sont les séries terminées originaires de Grande-Bretagne ou du Japon ?"
 );
 let filmArray = [];
-let strangersFilms = "";
+let strangersFilms;
+
 for (let c in series) {
   if (
-    series[c].country === undefined ||
-    (series[c].country === "grande-Bretagne" && series[c].ongoing === "fase")
-  )
-    strangersFilms = c;
-  array.push(strangersFilms);
-
-  console.log(strangersFilms);
-  console.log(filmArray);
+    !series[c].ongoing &&
+    (series[c].country === "Grande-Bretagne" || series[c].country === "Japon")
+  ) {
+    filmArray.push(c);
+  }
 }
-//   if (series[c].ongoing === false) {
-//     filmsfalse = c;
-//   }
-//   for (let filmsfalse in series) {
 
-//   }
-// }    array.push(strangersFilms)
+console.log(filmArray);
 
-// console.log(array);
 /* --------------------------------------------- */
 
 console.info(
