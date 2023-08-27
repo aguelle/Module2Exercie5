@@ -304,22 +304,70 @@ console.log(seriesArray);
 console.info(
   "8/ Retournez la liste des series avec pour chacune le nombre de personnes dans l'équipe de réalisation (createdBy) ?"
 );
+let arrayListe = {};
+for (let serieName in series) {
+  const team = series[serieName].createdBy.length;
+  arrayListe[serieName] = team;
+}
 
-console.log();
+console.log(arrayListe);
+console.table(arrayListe);
 
 /* --------------------------------------------- */
 
 console.info("9/ Combien il y a-t-il de series originaires de chaque pays ?");
 
-console.log();
+let serieByCountry = {};
+for (let serie in series) {
+  const série = series[serie];
+  const pays = série.country;
+  if (serieByCountry[pays]) {
+    serieByCountry[pays]++;
+  } else {
+    serieByCountry[pays] = 1;
+  }
+}
+
+console.log(serieByCountry);
 
 /* --------------------------------------------- */
 
 console.info(
   "10/ Quel est le style de série le plus représenté dans cette liste ?"
 );
+// Créez un objet pour compter le nombre de séries par style
+const stylesCount = {};
 
-console.log();
+// Parcourez chaque série et comptez les styles
+for (const nomSerie in series) {
+  const série = series[nomSerie];
+  const styles = série.styles;
+
+  // Parcourez chaque style de la série
+  for (const style of styles) {
+    // Si le style existe déjà dans l'objet, incrémentez le compteur
+    if (stylesCount[style]) {
+      stylesCount[style]++;
+    } else {
+      // Sinon, initialisez le compteur à 1
+      stylesCount[style] = 1;
+    }
+  }
+}
+
+// Recherchez le style avec le nombre le plus élevé
+let stylePlusReprésenté = "";
+let max = 0;
+
+for (const style in stylesCount) {
+  if (stylesCount[style] > max) {
+    max = stylesCount[style];
+    max = style;
+  }
+}
+
+// Affichez le style le plus représenté
+console.log("Le style de série le plus représenté est :", max);
 
 /* --------------------------------------------- */
 
