@@ -374,8 +374,15 @@ console.log("Le style de série le plus représenté est :", max);
 console.info(
   "BONUS 1/ Retournez la liste des titres de toutes les séries classées de la plus récente à la plus ancienne."
 );
-
-console.log();
+let oldSeries = [];
+for (let serieName in series) {
+  oldSeries.push({ Name: serieName, Release: series[serieName].releaseYear });
+}
+// console.table(oldSeries)
+oldSeries.sort(function compareNB(a, b) {
+  return b.Release - a.Release;
+});
+console.table(oldSeries);
 
 /* --------------------------------------------- */
 
